@@ -3,6 +3,7 @@ import Amplify, { API, graphqlOperation } from "aws-amplify";
 import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
 import awsExports from "./aws-exports";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import "./App.css";
 
 Amplify.configure(awsExports);
@@ -110,4 +111,4 @@ const styles = {
   },
 };
 
-export default App;
+export default withAuthenticator(App);
